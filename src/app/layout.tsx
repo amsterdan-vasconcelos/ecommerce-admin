@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import { ClerkProvider } from '@clerk/nextjs';
+import { ModalProvider } from '@/providers/modal-provider';
+import { StoreModal } from '@/components/modals/store-modal';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -28,6 +30,7 @@ export default function RootLayout({
       <html lang='pt-br'>
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+          <ModalProvider />
           {children}
         </body>
       </html>
